@@ -26,6 +26,7 @@ pipeline {
         //         sh 'gradle test'
         //     }
         // }
+        
         stage('Package and deploy') {
             steps {
                 sh 'gradle up'

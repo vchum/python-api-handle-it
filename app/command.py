@@ -2,6 +2,8 @@ from machine import Machine
 
 machine = Machine()
 
+var = ''
+
 while var != 'quitter':
     var = input(str("'machine' ou 'application' ou 'quitter' : "))
     if var == 'machine':

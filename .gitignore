@@ -4,3 +4,4 @@ app/test/__pycache__/*
 build/*
 result*
 output*
+vagrant/*/.vagrant/*

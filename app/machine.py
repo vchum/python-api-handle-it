@@ -1,4 +1,9 @@
+import json
+
 class Machine():
+
+    fichier = 'machines.json'
+
     def __init__(self):
         self.nom = 'Nom par défaut'
         self.ip = '10.0.0.1'
@@ -8,13 +13,21 @@ class Machine():
         self.os = {'ubuntu':'20.04'}
 
     def add(self, data):
+        # Pour écrire 
+        json.dump(data, self.fichier)
         return 'Machine ajoutée'
     
     def get(self, nom):
         return nom
     
     def liste(self):
-        return 'Liste des machines'
+        with open(self.fichier, 'r') as f:
+            try:
+                data = json.load(f)
+            except Exception as e:
+                print("Exception raised | %s " % str(e))
+                exit()
+        return data
 
     def edit(self,name,data):
         return 'Machine modifiée'
