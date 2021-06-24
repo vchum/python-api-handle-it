@@ -1,0 +1,6 @@
+.gradle/*
+app/__pycache__/*
+app/test/__pycache__/*
+build/*
+result*
+output*
