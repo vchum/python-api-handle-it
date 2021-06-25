@@ -26,6 +26,6 @@ chmod +x /etc/profile.d/gradle.sh
 
 source /etc/profile.d/gradle.sh
 
-## Ajout de PHP pour l'exemple : 
+## Ajout de Python pour l'exemple : 
 
-sudo apt install -y php php-mbstring php-dom
+sudo apt install -y python3 python3-pip python3-dev

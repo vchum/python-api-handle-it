@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## On met à jour le systeme pour pouvoir insaller
+## On met à jour le systeme pour pouvoir installer
     sudo apt update -y
 
     ## Installer le pré-requis Java 

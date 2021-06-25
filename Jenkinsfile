@@ -13,10 +13,10 @@ pipeline {
              steps {
                  parallel (
                  // run Gradle to execute compile and unit testing
-                    a: {
+                    pylint: {
                         sh 'gradle lint'
                     },
-                    b: {
+                    pycode: {
                         sh 'gradle pycode'
                     }
                 )

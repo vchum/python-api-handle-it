@@ -1,8 +1,9 @@
 def majorVersion = System.getenv("MAJOR_VERSION") ?: "1"
-//def minorVersion = System.getenv("MINOR_VERSION") ?: "0"
+def minorVersion = System.getenv("MINOR_VERSION") ?: "0"
 
-def minorVersion = System.getenv("BUILD_NUMBER")
-version = majorVersion + "." + minorVersion 
+def buildVersion = System.getenv("BUILD_NUMBER")
+
+version = majorVersion + "." + minorVersion + "." + buildVersion 
 
 task purge(type:Delete) {
   //println 'Cleaning up old files'
@@ -51,7 +52,14 @@ task up(type:Exec, dependsOn: packageDistribution) {
   args '-c', 'curl -v --user "'+nexusUsername+':'+nexusPassword+'" --upload-file build/project-'+version+'.zip http://'+nexusRepo+':8081/repository/ArchiveZip/demo-python/project/'+version+'/application-'+version+'.zip'
   standardOutput = new ByteArrayOutputStream()
   ext.output = { return standardOutput.toString() }
-  // doLast {
-  //   environment 'MINOR_VERSION', newVersion
-  // }
+//   doLast {
+//      environment 'MINOR_VERSION', newVersion
+//    }
+}
+
+task updateItManagement(type:Exec, dependsOn: up) {
+  executable 'sh'
+  args '-c', 'curl -v http://localhost:5000/application'
+  standardOutput = new ByteArrayOutputStream()
+  ext.output = { return standardOutput.toString() }
 }

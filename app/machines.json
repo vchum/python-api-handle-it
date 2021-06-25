@@ -1,1 +1,0 @@
-[{'nom': 'VM 1', 'ip': '10.0.0.15', 'cpu': 2, 'ram': '4Go', 'OS': {'editeur': 'Ubuntu', 'version': '20.04'}, 'disques': {'nom': 'disque1', 'taille': 10}}]
