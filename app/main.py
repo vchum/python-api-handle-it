@@ -9,9 +9,15 @@ machine = Machine()
 def hello_world():
     return "Bienvenue sur l'application de gestion"
 
-@app.route('/machines', methods=["GET"])
+@app.route('/machines', methods=["GET","POST"])
 def liste_machine():
-    return jsonify({"machines": machine.liste() })
+    if request.method == 'GET':
+        return jsonify({"machines": machine.liste() })
+    elif request.method == "POST":
+        data = request.json
+        return jsonify({"machine":machine.add(data)})
+    else:
+        return jsonify({"error": 'La méthode utilisée n\'est pas valide'})
 
 @app.route('/machines/<name>', methods=["GET","PUT","DELETE"])
 def get_machine(name):

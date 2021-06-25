@@ -14,8 +14,9 @@ class Machine():
 
     def add(self, data):
         # Pour écrire 
-        json.dump(data, self.fichier)
-        return 'Machine ajoutée'
+        with open(self.fichier, 'w') as f:
+            f.write(str(data))
+            return 'Machine ajoutée'
     
     def get(self, nom):
         return nom
