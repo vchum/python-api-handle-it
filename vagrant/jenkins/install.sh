@@ -13,6 +13,10 @@
     sudo apt -y update
     sudo apt -y install jenkins
 
+## Installer les dépendances en Python pour le projet
+
+sudo apt -y install python3 python3-pip
+
 ## Démarrer le service Jenkins
 
 sudo service start jenkins

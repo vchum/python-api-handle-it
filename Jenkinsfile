@@ -17,17 +17,26 @@ pipeline {
              }
            }
         stage('Pycode') {
+            tools {
+               gradle 'installGradle'
+             }
             steps {
                 sh 'gradle pycode'
             }
         }
         // stage('testcode') {
+            //  tools {
+            //    gradle 'installGradle'
+            //  }
         //     steps {
         //         sh 'gradle test'
         //     }
         // }
-        
+
         stage('Package and deploy') {
+             tools {
+               gradle 'installGradle'
+             }
             steps {
                 sh 'gradle up'
             }
