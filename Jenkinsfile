@@ -73,7 +73,7 @@ pipeline {
 
         stage('Deploy to environment') {
             steps {
-                sh 'ansible-playbook -i inventory k8s-deployment.yml'
+                sh 'ansible-playbook -i vagrant/k8s-ansible/inventory vagrant/k8s-ansible/k8s-deployment.yml'
             }
         }
       }
