@@ -28,3 +28,10 @@ docker run -it --rm --name my-app my-image-python
 ```sh
 kubectl apply -f manifest-k8s
 ```
+
+## Utiliser ansible pour créer le cluster K8s
+
+* Télécharger les rôles
+```sh
+ansible-galaxy install -r requirements.yml -p ./roles
+```

@@ -22,8 +22,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: env-config-demo
-            - secretRef:
-                name: env-secrets-demo
   selector:
     matchLabels:
       app: demo-app
