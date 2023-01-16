@@ -1,4 +1,5 @@
 import unittest
+import json
 
 from application import Application
 from machine import Machine
@@ -17,23 +18,27 @@ class TestApplication(unittest.TestCase):
     # Exemple de test avec un echec (failure)
     # def test_liste_application_ko(self):
     #     contenu_liste = Application.liste()
-    #     self.assertEquals(contenu_liste,'Une phrase')
+    #     self.assertEqual(contenu_liste,'Une phrase')
 
     def test_liste_application_ok(self):
         contenu_liste = Application.liste()
-        self.assertEquals(contenu_liste,'Liste des applications')
+        self.assertEqual(contenu_liste,'Liste des applications')
 
+    def test_add_application(self):
+        add_app = Application.add(self.demo_donnes)
+        self.assertEqual(add_app,'Application ajoutée')
 
 class TestMachines(unittest.TestCase):
     def test_ajout_machine(self):
-        ajout_machine = Machine.add((),('mes donnees à écrire',"fichier=machines.json"))
+        Machine.fichier="machines.json"
+        ajout_machine = Machine.add(Machine,'{"donnees":"mes donnees à écrire"}')
         with open('machines.json', 'r') as f:
             try:
                 contenu_fichier = json.load(f)
             except Exception as e:
                 print("Exception raised | %s " % str(e))
                 exit()
-        self.assertIn(contenu_fichier,'mes donnees à écrire')
+        self.assertEqual(contenu_fichier,{"donnees":"mes donnees à écrire"})
 
     
 if __name__ == '__main__':
