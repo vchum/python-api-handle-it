@@ -9,3 +9,4 @@ vagrant/k8s-ansible/roles/*
 app/log.html
 .gitignore
 app/report.html
+app/report/*
