@@ -28,6 +28,12 @@ docker run -it --rm --name my-app my-image-python
 python -m unittest test/unit/test.py 
 ```
 
+## Execution des tests systèmes : 
+* Installer les packages pythons robotframework et robotframework-requests
+* Lancer la commande 
+```
+robot test/system/machine.robot
+```
 
 ## Création d'un pod kubernetes
 
