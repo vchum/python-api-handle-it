@@ -1,4 +1,4 @@
-from machine import Machine
+from app.machine.machine import Machine
 
 machine = Machine()
 

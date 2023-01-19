@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 
-from machine import Machine
+from machine.machine import Machine
+from application.application import Application
 
 app = Flask(__name__)
 machine = Machine()
