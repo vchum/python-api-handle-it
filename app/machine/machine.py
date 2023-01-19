@@ -2,7 +2,7 @@ import json
 
 class Machine():
 
-    fichier = './machines.json'
+    fichier = 'machine/machines.json'
 
     def __init__(self):
         self.nom = 'Nom par défaut'
