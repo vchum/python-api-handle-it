@@ -23,6 +23,12 @@ docker run -it --rm --name my-app my-image-python
  docker push vanessakovalsky/my-image-python
 ```
 
+## Execution des tests unitaires :
+```
+python -m unittest test/unit/test.py 
+```
+
+
 ## Création d'un pod kubernetes
 
 ```sh
@@ -36,4 +42,3 @@ kubectl apply -f manifest-k8s
 ansible-galaxy install -r requirements.yml -p ./roles
 ```
 
-## Test CI AWS
