@@ -48,4 +48,4 @@ kubectl apply -f manifest-k8s
 ansible-galaxy install -r requirements.yml -p ./roles
 ```
 
- 
+acces 
