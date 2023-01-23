@@ -42,3 +42,4 @@ services:
       - type: bind
         source: ../app
         target: /app/
+

@@ -4,4 +4,4 @@ WORKDIR /app
 
 RUN pip3 install html-testRunner
 
-CMD ["python","-m","unittest","test/unit/test.py"]
+CMD ["/bin/bash","-c","python -m unittest test/unit/test.py"]
