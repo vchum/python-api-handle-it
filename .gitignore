@@ -10,3 +10,4 @@ app/log.html
 .gitignore
 app/report.html
 app/report/*
+app/reports/*
